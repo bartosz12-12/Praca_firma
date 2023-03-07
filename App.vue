@@ -10,21 +10,21 @@
       <form @submit.prevent="submitForm">
         <div class="form-group">
           <label for="type">Rodzaj zgłoszenia:</label>
-          <input type="text" id="type" name="type" v-model="type">
+          <input type="text" id="type" name="type" v-model="type" required>
         </div>
         <div class="form-group">
           <label for="priority">Priorytet:</label>
           <div>
             <label>
-              <input type="radio" name="priority" value="high" v-model="priority">
+              <input type="radio" name="priority" value="high" v-model="priority" required>
               Wysoki
             </label>
             <label>
-              <input type="radio" name="priority" value="medium" v-model="priority">
+              <input type="radio" name="priority" value="medium" v-model="priority" required>
               Średni
             </label>
             <label>
-              <input type="radio" name="priority" value="low" v-model="priority">
+              <input type="radio" name="priority" value="low" v-model="priority" required>
               Niski
             </label>
           </div>
@@ -34,11 +34,11 @@
           <label for="continueWorking">Czy można kontynuować pracę:</label>
           <div>
             <label>
-              <input type="radio" name="continueWorking" value="yes" v-model="continueWorking">
+              <input type="radio" name="continueWorking" value="yes" v-model="continueWorking" required>
               Tak
             </label>
             <label>
-              <input type="radio" name="continueWorking" value="no" v-model="continueWorking">
+              <input type="radio" name="continueWorking" value="no" v-model="continueWorking" required>
               Nie
             </label>
           </div>
@@ -46,7 +46,7 @@
 
         <div class="form-group">
           <label for="circumstances">Okoliczności zdarzenia:</label>
-          <textarea id="circumstances" v-model="circumstances"></textarea>
+          <textarea id="circumstances" v-model="circumstances" required></textarea>
         </div>
 
         <button type="submit">Wyślij zgłoszenie</button>
@@ -65,7 +65,7 @@
         <h3>{{ selectedReport.priority }} - {{ selectedReport.circumstances }}</h3>
         <div class="form-group">
           <label for="report">Raport:</label>
-          <textarea id="report" v-model="report"></textarea>
+          <textarea id="report" v-model="report" required></textarea>
         </div>
 
         <button @click="closeReport">Dodaj raport i zamknij zgłoszenie</button>
